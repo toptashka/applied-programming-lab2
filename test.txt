@@ -1,0 +1,6 @@
+// first file comment
+int x = 10;
+char* s = "// fake comment inside quotes";
+/* second
+multiline comment */
+y = 20 # third python comment
