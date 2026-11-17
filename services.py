@@ -1,8 +1,13 @@
+import re
+import os
+
 def parsing_input(raw_input: str) -> str:
-    pass
-# если строка начинается строго на http:// или https:// : функция на работу с URL ссылками
-# иначе если строка это существующий путь : функция на работу с файлами
-# иначе : функция на работу с обычными строками
+    if re.fullmatch(r'(?:http|https)://\S+', raw_input):
+        return "url"
+    elif os.path.isfile(raw_input):
+        return "file"
+    else:
+        return "string"
 
 
 # функция на работу с URL ссылками (строка с ввода)
